@@ -138,7 +138,7 @@ _Add your dashboard screenshots below once exported from Power BI (File → Expo
 ![Project Screenshot](<Screenshot 2026-06-11 160500.png>)
 
 ### Geographic Analysis Page
-![Geographic Analysis](screenshots/geographic-analysis.png)
+![Project Screenshot](<Screenshot 2026-06-10 184502.png>)
 
 ### Payments & Reviews Page
 ![Payments and Reviews](screenshots/payments-reviews.png)
