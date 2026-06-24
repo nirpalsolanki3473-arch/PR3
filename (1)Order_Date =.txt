@@ -1,0 +1,131 @@
+(1)Order_Date =
+DATEVALUE(Dimorders[order_purchase_timestamp])
+
+ 
+(2)Avg_Order_Value =
+AVERAGEX(
+    DimOrders,
+    CALCULATE(SUM(FactOrderItems[price]))
+)
+
+
+
+(3)Payment_Value_Category =
+IF(
+    FactPayments[payment_value] < 50,
+    "Low",
+ 
+    IF(
+        FactPayments[payment_value] < 100,
+        "Medium",
+        "High"
+    )
+)
+
+
+
+
+
+(4)Total Orders = DISTINCTCOUNT(FactOrderItems[order_id])
+
+
+(5)Order_Date =
+DATEVALUE(Dimorders[order_purchase_timestamp])
+
+
+
+(6)Avg_Order_Value =
+AVERAGEX(
+    DimOrders,
+    CALCULATE(SUM(FactOrderItems[price]))
+)
+
+
+(7)Total Sales =
+SUM(FactOrderItems[price])
+
+
+
+
+(8)Avg Review Score =
+AVERAGE(FactReviews[review_score])
+
+
+(9)Product_Category_EN =
+SWITCH(
+    TRUE(),
+
+    DimProducts[product_category_name] = "agro_industria_e_comercio", "agro_industry_and_commerce",
+    DimProducts[product_category_name] = "alimentos", "food",
+    DimProducts[product_category_name] = "alimentos_bebidas", "food_drink",
+    DimProducts[product_category_name] = "artes", "art",
+    DimProducts[product_category_name] = "artes_e_artesanato", "arts_and_craftsmanship",
+    DimProducts[product_category_name] = "artigos_de_festas", "party_supplies",
+    DimProducts[product_category_name] = "artigos_de_natal", "christmas_supplies",
+    DimProducts[product_category_name] = "audio", "audio",
+    DimProducts[product_category_name] = "automotivo", "automotive",
+    DimProducts[product_category_name] = "bebes", "baby",
+    DimProducts[product_category_name] = "bebidas", "drinks",
+    DimProducts[product_category_name] = "beleza_saude", "health_beauty",
+    DimProducts[product_category_name] = "brinquedos", "toys",
+    DimProducts[product_category_name] = "cama_mesa_banho", "bed_bath_table",
+    DimProducts[product_category_name] = "casa_conforto", "home_comfort",
+    DimProducts[product_category_name] = "casa_conforto_2", "home_comfort_2",
+    DimProducts[product_category_name] = "casa_construcao", "home_construction",
+    DimProducts[product_category_name] = "cds_dvds_musicais", "cds_dvds_musicals",
+    DimProducts[product_category_name] = "cine_foto", "cine_photo",
+    DimProducts[product_category_name] = "climatizacao", "air_conditioning",
+    DimProducts[product_category_name] = "consoles_games", "consoles_games",
+    DimProducts[product_category_name] = "construcao_ferramentas_construcao", "construction_tools_construction",
+    DimProducts[product_category_name] = "construcao_ferramentas_ferramentas", "construction_tools_tools",
+    DimProducts[product_category_name] = "construcao_ferramentas_iluminacao", "construction_tools_lights",
+    DimProducts[product_category_name] = "construcao_ferramentas_jardim", "construction_tools_garden",
+    DimProducts[product_category_name] = "construcao_ferramentas_seguranca", "construction_tools_safety",
+    DimProducts[product_category_name] = "cool_stuff", "cool_stuff",
+    DimProducts[product_category_name] = "dvds_blu_ray", "dvds_blu_ray",
+    DimProducts[product_category_name] = "eletrodomesticos", "home_appliances",
+    DimProducts[product_category_name] = "eletrodomesticos_2", "home_appliances_2",
+    DimProducts[product_category_name] = "eletronicos", "electronics",
+    DimProducts[product_category_name] = "eletroportateis", "small_appliances",
+    DimProducts[product_category_name] = "esporte_lazer", "sports_leisure",
+    DimProducts[product_category_name] = "fashion_bolsas_e_acessorios", "fashion_bags_accessories",
+    DimProducts[product_category_name] = "fashion_calcados", "fashion_shoes",
+    DimProducts[product_category_name] = "fashion_esporte", "fashion_sport",
+    DimProducts[product_category_name] = "fashion_roupa_feminina", "fashion_female_clothing",
+    DimProducts[product_category_name] = "fashion_roupa_infanto_juvenil", "fashion_childrens_clothes",
+    DimProducts[product_category_name] = "fashion_roupa_masculina", "fashion_male_clothing",
+    DimProducts[product_category_name] = "fashion_underwear_e_moda_praia", "fashion_underwear_beach",
+    DimProducts[product_category_name] = "ferramentas_jardim", "garden_tools",
+    DimProducts[product_category_name] = "flores", "flowers",
+    DimProducts[product_category_name] = "fraldas_higiene", "diapers_and_hygiene",
+    DimProducts[product_category_name] = "industria_comercio_e_negocios", "industry_commerce_and_business",
+    DimProducts[product_category_name] = "informatica_acessorios", "computers_accessories",
+    DimProducts[product_category_name] = "instrumentos_musicais", "musical_instruments",
+    DimProducts[product_category_name] = "la_cuisine", "la_cuisine",
+    DimProducts[product_category_name] = "livros_importados", "books_imported",
+    DimProducts[product_category_name] = "livros_interesse_geral", "books_general_interest",
+    DimProducts[product_category_name] = "livros_tecnicos", "books_technical",
+    DimProducts[product_category_name] = "malas_acessorios", "luggage_accessories",
+    DimProducts[product_category_name] = "market_place", "market_place",
+    DimProducts[product_category_name] = "moveis_colchao_e_estofado", "furniture_mattress_and_upholstery",
+    DimProducts[product_category_name] = "moveis_cozinha_area_de_servico_jantar_e_jardim", "kitchen_dining_laundry_garden_furniture",
+    DimProducts[product_category_name] = "moveis_decoracao", "furniture_decor",
+    DimProducts[product_category_name] = "moveis_escritorio", "office_furniture",
+    DimProducts[product_category_name] = "moveis_quarto", "furniture_bedroom",
+    DimProducts[product_category_name] = "moveis_sala", "furniture_living_room",
+    DimProducts[product_category_name] = "musica", "music",
+    DimProducts[product_category_name] = "papelaria", "stationery",
+    DimProducts[product_category_name] = "pc_gamer", "pc_gamer",
+    DimProducts[product_category_name] = "pcs", "computers",
+    DimProducts[product_category_name] = "perfumaria", "perfumery",
+    DimProducts[product_category_name] = "pet_shop", "pet_shop",
+    DimProducts[product_category_name] = "portateis_casa_forno_e_cafe", "small_appliances_home_oven_and_coffee",
+    DimProducts[product_category_name] = "portateis_cozinha_e_preparadores_de_alimentos", "kitchen_appliances",
+    DimProducts[product_category_name] = "relogios_presentes", "watches_gifts",
+    DimProducts[product_category_name] = "seguros_e_servicos", "security_and_services",
+    DimProducts[product_category_name] = "sinalizacao_e_seguranca", "signaling_and_security",
+    DimProducts[product_category_name] = "tablets_impressao_imagem", "tablets_printing_image",
+    DimProducts[product_category_name] = "telefonia", "telephony",
+    DimProducts[product_category_name] = "telefonia_fixa", "fixed_telephony",
+    DimProducts[product_category_name] = "utilidades_domesticas", "housewares"
+)
