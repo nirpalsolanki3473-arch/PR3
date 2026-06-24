@@ -146,6 +146,9 @@ _Add your dashboard screenshots below once exported from Power BI (File → Expo
 ## Relationship Diagram
 ![Relation Diagram](<Screenshot 2026-06-11 162544.png>)
 
+## DAX Formulas
+[Order Date Formula](<(1)Order_Date =.txt>)
+
 ---
 
 ## 📌 Future Improvements
