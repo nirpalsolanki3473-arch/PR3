@@ -135,7 +135,7 @@ FactOrderItems (central fact table)
 _Add your dashboard screenshots below once exported from Power BI (File → Export → PDF/Image, or simple screen capture of each page):_
 
 ### Sales Overview Page
-![Sales Overview](screenshots/sales-overview.png)
+![Project Screenshot](<Screenshot 2026-06-11 160500.png>)
 
 ### Geographic Analysis Page
 ![Geographic Analysis](screenshots/geographic-analysis.png)
