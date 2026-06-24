@@ -143,6 +143,9 @@ _Add your dashboard screenshots below once exported from Power BI (File → Expo
 ### Payments & Reviews Page
 ![Project Screenshot](<Screenshot 2026-06-10 184550.png>)
 
+## Relationship Diagram
+![Relation Diagram](<Screenshot 2026-06-11 162544.png>)
+
 ---
 
 ## 📌 Future Improvements
